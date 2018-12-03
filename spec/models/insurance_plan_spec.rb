@@ -12,6 +12,8 @@ RSpec.describe InsurancePlan, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:applicants) }
+
     it { should have_many(:users) }
 
     end

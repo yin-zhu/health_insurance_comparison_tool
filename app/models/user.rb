@@ -10,6 +10,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :interested_plans,
+             :through => :user_plans,
+             :source => :insurance_plan
+
   has_many   :comp_plans,
              :through => :comparison_tables,
              :source => :insurance_plan

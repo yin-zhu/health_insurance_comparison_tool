@@ -12,6 +12,8 @@ RSpec.describe User, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:interested_plans) }
+
     it { should have_many(:comp_plans) }
 
     end
