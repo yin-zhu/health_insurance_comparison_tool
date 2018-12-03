@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Comparison table #<%= @comparison_table.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/comparison_tables" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link comparison_table start -->
+      <div class="col">
+        <a href="/comparison_tables/<%= @comparison_table.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit comparison table
+        </a>
+      </div>
+      <!-- Edit link comparison_table end -->
+
+      <!-- Delete link comparison_table start -->
+      <div class="col">
+        <a href="/delete_comparison_table/<%= @comparison_table.id %>" class="btn btn-block btn-outline-secondary">
+          Delete comparison table
+        </a>
+      </div>
+      <!-- Delete link comparison_table end -->
+    </div>
+
+    <dl>
+      <dt>
+        Estimated spend
+      </dt>
+      <!-- Display estimated_spend start -->
+      <dd>
+        <%= @comparison_table.estimated_spend %>
+      </dd>
+      <!-- Display estimated_spend end -->
+
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @comparison_table.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Insurance plan
+      </dt>
+      <!-- Display insurance_plan_id start -->
+      <dd>
+        <%= @comparison_table.insurance_plan_id %>
+      </dd>
+      <!-- Display insurance_plan_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@comparison_table.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@comparison_table.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

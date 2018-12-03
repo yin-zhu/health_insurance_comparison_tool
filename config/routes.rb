@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Comparison table resource:
+
+  # CREATE
+  get("/comparison_tables/new", { :controller => "comparison_tables", :action => "new_form" })
+  post("/create_comparison_table", { :controller => "comparison_tables", :action => "create_row" })
+
+  # READ
+  get("/comparison_tables", { :controller => "comparison_tables", :action => "index" })
+  get("/comparison_tables/:id_to_display", { :controller => "comparison_tables", :action => "show" })
+
+  # UPDATE
+  get("/comparison_tables/:prefill_with_id/edit", { :controller => "comparison_tables", :action => "edit_form" })
+  post("/update_comparison_table/:id_to_modify", { :controller => "comparison_tables", :action => "update_row" })
+
+  # DELETE
+  get("/delete_comparison_table/:id_to_remove", { :controller => "comparison_tables", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Insurance plan resource:
 
   # CREATE
