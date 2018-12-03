@@ -58,13 +58,21 @@
 
         <!-- Display interested_plan.insurance_plan_id start -->
         <td>
-          <%= interested_plan.insurance_plan.coinsurance_paid_by_patient %>
+          <% if interested_plan.insurance_plan.present? %>
+            <a href="/insurance_plans/<%= interested_plan.insurance_plan.id %>">
+              <%= interested_plan.insurance_plan.coinsurance_paid_by_patient %>
+            </a>
+          <% end %>
         </td>
         <!-- Display interested_plan.insurance_plan_id end -->
 
         <!-- Display interested_plan.user_id start -->
         <td>
-          <%= interested_plan.user.email %>
+          <% if interested_plan.user.present? %>
+            <a href="/users/<%= interested_plan.user.id %>">
+              <%= interested_plan.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display interested_plan.user_id end -->
 

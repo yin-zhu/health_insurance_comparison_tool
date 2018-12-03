@@ -47,7 +47,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @comparison_table.user_id %>
+        <% if @comparison_table.user.present? %>
+          <a href="/users/<%= @comparison_table.user_id %>">
+            <%= @comparison_table.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -56,7 +60,11 @@
       </dt>
       <!-- Display insurance_plan_id start -->
       <dd>
-        <%= @comparison_table.insurance_plan_id %>
+        <% if @comparison_table.insurance_plan.present? %>
+          <a href="/insurance_plans/<%= @comparison_table.insurance_plan_id %>">
+            <%= @comparison_table.insurance_plan.coinsurance_paid_by_patient %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display insurance_plan_id end -->
 

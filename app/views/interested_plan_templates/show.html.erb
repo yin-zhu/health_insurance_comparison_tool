@@ -34,7 +34,11 @@
       </dt>
       <!-- Display insurance_plan_id start -->
       <dd>
-        <%= @interested_plan.insurance_plan_id %>
+        <% if @interested_plan.insurance_plan.present? %>
+          <a href="/insurance_plans/<%= @interested_plan.insurance_plan_id %>">
+            <%= @interested_plan.insurance_plan.coinsurance_paid_by_patient %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display insurance_plan_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @interested_plan.user_id %>
+        <% if @interested_plan.user.present? %>
+          <a href="/users/<%= @interested_plan.user_id %>">
+            <%= @interested_plan.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

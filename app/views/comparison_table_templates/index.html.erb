@@ -68,13 +68,21 @@
 
         <!-- Display comparison_table.user_id start -->
         <td>
-          <%= comparison_table.user.email %>
+          <% if comparison_table.user.present? %>
+            <a href="/users/<%= comparison_table.user.id %>">
+              <%= comparison_table.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comparison_table.user_id end -->
 
         <!-- Display comparison_table.insurance_plan_id start -->
         <td>
-          <%= comparison_table.insurance_plan.coinsurance_paid_by_patient %>
+          <% if comparison_table.insurance_plan.present? %>
+            <a href="/insurance_plans/<%= comparison_table.insurance_plan.id %>">
+              <%= comparison_table.insurance_plan.coinsurance_paid_by_patient %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comparison_table.insurance_plan_id end -->
 
