@@ -11,100 +11,79 @@
         </a>
       </div>
 
-      <!-- Edit link insurance_plan start -->
       <div class="col">
         <a href="/insurance_plans/<%= @insurance_plan.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit insurance plan
         </a>
       </div>
-      <!-- Edit link insurance_plan end -->
 
-      <!-- Delete link insurance_plan start -->
       <div class="col">
         <a href="/delete_insurance_plan/<%= @insurance_plan.id %>" class="btn btn-block btn-outline-secondary">
           Delete insurance plan
         </a>
       </div>
-      <!-- Delete link insurance_plan end -->
     </div>
 
     <dl>
       <dt>
         Coinsurance paid by patient
       </dt>
-      <!-- Display coinsurance_paid_by_patient start -->
       <dd>
         <%= @insurance_plan.coinsurance_paid_by_patient %>
       </dd>
-      <!-- Display coinsurance_paid_by_patient end -->
 
       <dt>
         Deductible
       </dt>
-      <!-- Display deductible start -->
       <dd>
         <%= @insurance_plan.deductible %>
       </dd>
-      <!-- Display deductible end -->
 
       <dt>
         Monthly premium
       </dt>
-      <!-- Display monthly_premium start -->
       <dd>
         <%= @insurance_plan.monthly_premium %>
       </dd>
-      <!-- Display monthly_premium end -->
 
       <dt>
         Plan name
       </dt>
-      <!-- Display plan_name start -->
       <dd>
         <%= @insurance_plan.plan_name %>
       </dd>
-      <!-- Display plan_name end -->
 
       <dt>
         Comp table
       </dt>
-      <!-- Display comp_table_id start -->
       <dd>
         <%= @insurance_plan.comp_table_id %>
       </dd>
-      <!-- Display comp_table_id end -->
 
       <dt>
         Age group
       </dt>
-      <!-- Display age_group start -->
       <dd>
         <%= @insurance_plan.age_group %>
       </dd>
-      <!-- Display age_group end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@insurance_plan.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@insurance_plan.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "insurance_plan_templates/insurance_plan_user_plans" %>
@@ -128,4 +107,3 @@
     <%= render partial: "insurance_plan_templates/insurance_plan_applicants" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

@@ -11,13 +11,11 @@
         </a>
       </div>
 
-      <!-- Edit link user start -->
       <div class="col">
         <a href="/users/<%= @user.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit user
         </a>
       </div>
-      <!-- Edit link user end -->
 
     </div>
 
@@ -25,79 +23,62 @@
       <dt>
         Email
       </dt>
-      <!-- Display email start -->
       <dd>
         <%= @user.email %>
       </dd>
-      <!-- Display email end -->
 
       <dt>
         Password
       </dt>
-      <!-- Display password start -->
       <dd>
         <%= @user.password %>
       </dd>
-      <!-- Display password end -->
 
       <dt>
         User name
       </dt>
-      <!-- Display user_name start -->
       <dd>
         <%= @user.user_name %>
       </dd>
-      <!-- Display user_name end -->
 
       <dt>
         Birthday
       </dt>
-      <!-- Display birthday start -->
       <dd>
         <%= @user.birthday %>
       </dd>
-      <!-- Display birthday end -->
 
       <dt>
         State
       </dt>
-      <!-- Display state start -->
       <dd>
         <%= @user.state %>
       </dd>
-      <!-- Display state end -->
 
       <dt>
         Tobacco use
       </dt>
-      <!-- Display tobacco_use start -->
       <dd>
         <%= @user.tobacco_use %>
       </dd>
-      <!-- Display tobacco_use end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@user.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@user.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "user_templates/user_user_plans" %>
@@ -121,4 +102,3 @@
     <%= render partial: "user_templates/user_interested_plans" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

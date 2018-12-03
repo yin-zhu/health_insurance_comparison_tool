@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "interested_plan_templates/interested_plans_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -54,13 +50,10 @@
 
       <% @interested_plans.each do |interested_plan| %>
       <tr>
-        <!-- Display interested_plan.id start -->
         <td>
           <%= interested_plan.id %>
         </td>
-        <!-- Display interested_plan.id end -->
 
-        <!-- Display interested_plan.insurance_plan_id start -->
         <td>
           <% if interested_plan.insurance_plan.present? %>
             <a href="/insurance_plans/<%= interested_plan.insurance_plan.id %>">
@@ -68,9 +61,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display interested_plan.insurance_plan_id end -->
 
-        <!-- Display interested_plan.user_id start -->
         <td>
           <% if interested_plan.user.present? %>
             <a href="/users/<%= interested_plan.user.id %>">
@@ -78,19 +69,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display interested_plan.user_id end -->
 
-        <!-- Display interested_plan.created_at start -->
         <td>
           <%= time_ago_in_words(interested_plan.created_at) %> ago
         </td>
-        <!-- Display interested_plan.created_at end -->
 
-        <!-- Display interested_plan.updated_at start -->
         <td>
           <%= time_ago_in_words(interested_plan.updated_at) %> ago
         </td>
-        <!-- Display interested_plan.updated_at end -->
 
         <td>
           <a href="/interested_plans/<%= interested_plan.id %>">

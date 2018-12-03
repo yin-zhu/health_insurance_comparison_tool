@@ -1,29 +1,16 @@
-<!-- Form comparison_table start -->
 <form action="/create_comparison_table_from_insurance_plan" method="post">
-<!-- Form comparison_table end -->
 
-  <!-- Label and input for estimated_spend start -->
   <div class="form-group">
     <label for="estimated_spend">
       Estimated spend
     </label>
 
-    <!-- Input for estimated_spend start -->
     <input type="text" id="estimated_spend" name="estimated_spend" class="form-control" value="<%= @comparison_table.estimated_spend %>">
-    <!-- Input for estimated_spend end -->
   </div>
-  <!-- Label and input for estimated_spend end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for insurance_plan_id start -->
-  <!-- Input for insurance_plan_id start -->
   <input type="hidden" name="insurance_plan_id" value="<%= @insurance_plan.id %>">
-  <!-- Input for insurance_plan_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create comparison table

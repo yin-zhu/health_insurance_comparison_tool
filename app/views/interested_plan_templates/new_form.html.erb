@@ -5,33 +5,23 @@
 
 <hr>
 
-<!-- Form interested_plan start -->
 <form action="/create_interested_plan" method="post">
-<!-- Form interested_plan end -->
 
-  <!-- Label and input for insurance_plan_id start -->
   <div class="form-group">
     <label for="insurance_plan_id">
       Insurance plan
     </label>
 
-    <!-- Input for insurance_plan_id start -->
     <%= select_tag(:insurance_plan_id, options_from_collection_for_select(InsurancePlan.all, :id, :coinsurance_paid_by_patient, @interested_plan.insurance_plan_id), :class => "form-control") %>
-    <!-- Input for insurance_plan_id end -->
   </div>
-  <!-- Label and input for insurance_plan_id end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <label for="user_id">
       User
     </label>
 
-    <!-- Input for user_id start -->
     <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @interested_plan.user_id), :class => "form-control") %>
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create interested plan

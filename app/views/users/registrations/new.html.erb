@@ -7,9 +7,7 @@
 
       <div class="card-body">
         <% was_validated = resource.errors.any? %>
-        <!-- Form html options start -->
         <% form_html_options = { novalidate: true, class: "mb-3" } %>
-        <!-- Form html options end -->
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: form_html_options) do |f| %>
 
           <div class="form-group">
@@ -91,7 +89,6 @@
           </div>
 
           
-          <!-- Devise Input for user_name start -->
           <div class="form-group">
             <% user_name_was_invalid = resource.errors.include?(:user_name) %>
 
@@ -117,9 +114,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for user_name end -->
           
-          <!-- Devise Input for birthday start -->
           <div class="form-group">
             <% birthday_was_invalid = resource.errors.include?(:birthday) %>
 
@@ -145,9 +140,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for birthday end -->
           
-          <!-- Devise Input for state start -->
           <div class="form-group">
             <% state_was_invalid = resource.errors.include?(:state) %>
 
@@ -173,9 +166,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for state end -->
           
-          <!-- Devise Input for tobacco_use start -->
           <div class="form-group">
             <% tobacco_use_was_invalid = resource.errors.include?(:tobacco_use) %>
 
@@ -201,7 +192,6 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for tobacco_use end -->
           <%= f.button class: "btn btn-outline-primary btn-block" %>
 
           <hr>

@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @insurance_plan.comparison_tables.each do |comparison_table| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/comparison_tables/<%= comparison_table.id %>">
           <%= comparison_table.created_at %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == comparison_table.user %>
           <a href="/delete_comparison_table_from_insurance_plan/<%= comparison_table.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="insurance_plan_comparison_tables_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "insurance_plan_templates/insurance_plan_comparison_tables_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

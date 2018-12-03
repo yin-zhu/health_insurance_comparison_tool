@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link interested_plan start -->
       <div class="col">
         <a href="/interested_plans/<%= @interested_plan.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit interested plan
         </a>
       </div>
-      <!-- Edit link interested_plan end -->
 
-      <!-- Delete link interested_plan start -->
       <div class="col">
         <a href="/delete_interested_plan/<%= @interested_plan.id %>" class="btn btn-block btn-outline-secondary">
           Delete interested plan
         </a>
       </div>
-      <!-- Delete link interested_plan end -->
     </div>
 
     <dl>
       <dt>
         Insurance plan
       </dt>
-      <!-- Display insurance_plan_id start -->
       <dd>
         <% if @interested_plan.insurance_plan.present? %>
           <a href="/insurance_plans/<%= @interested_plan.insurance_plan_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display insurance_plan_id end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @interested_plan.user.present? %>
           <a href="/users/<%= @interested_plan.user_id %>">
@@ -53,28 +46,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@interested_plan.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@interested_plan.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

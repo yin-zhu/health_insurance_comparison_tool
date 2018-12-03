@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.comparison_tables.each do |comparison_table| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/comparison_tables/<%= comparison_table.id %>">
           <%= comparison_table.created_at %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

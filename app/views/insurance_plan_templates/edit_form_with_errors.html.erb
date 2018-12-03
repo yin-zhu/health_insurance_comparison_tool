@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @insurance_plan.errors.any? %>
   <% @insurance_plan.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,81 +12,55 @@
 
 <hr>
 
-<!-- Form insurance_plan start -->
 <form action="/update_insurance_plan/<%= @insurance_plan.id %>" method="post">
-<!-- Form insurance_plan end -->
 
-  <!-- Label and input for coinsurance_paid_by_patient start -->
   <div class="form-group">
     <label for="coinsurance_paid_by_patient">
       Coinsurance paid by patient
     </label>
 
-    <!-- Input for coinsurance_paid_by_patient start -->
     <input type="text" id="coinsurance_paid_by_patient" name="coinsurance_paid_by_patient" class="form-control" value="<%= @insurance_plan.coinsurance_paid_by_patient %>">
-    <!-- Input for coinsurance_paid_by_patient end -->
   </div>
-  <!-- Label and input for coinsurance_paid_by_patient end -->
 
-  <!-- Label and input for deductible start -->
   <div class="form-group">
     <label for="deductible">
       Deductible
     </label>
 
-    <!-- Input for deductible start -->
     <input type="text" id="deductible" name="deductible" class="form-control" value="<%= @insurance_plan.deductible %>">
-    <!-- Input for deductible end -->
   </div>
-  <!-- Label and input for deductible end -->
 
-  <!-- Label and input for monthly_premium start -->
   <div class="form-group">
     <label for="monthly_premium">
       Monthly premium
     </label>
 
-    <!-- Input for monthly_premium start -->
     <input type="text" id="monthly_premium" name="monthly_premium" class="form-control" value="<%= @insurance_plan.monthly_premium %>">
-    <!-- Input for monthly_premium end -->
   </div>
-  <!-- Label and input for monthly_premium end -->
 
-  <!-- Label and input for plan_name start -->
   <div class="form-group">
     <label for="plan_name">
       Plan name
     </label>
 
-    <!-- Input for plan_name start -->
     <input type="text" id="plan_name" name="plan_name" class="form-control" value="<%= @insurance_plan.plan_name %>">
-    <!-- Input for plan_name end -->
   </div>
-  <!-- Label and input for plan_name end -->
 
-  <!-- Label and input for comp_table_id start -->
   <div class="form-group">
     <label for="comp_table_id">
       Comp table
     </label>
 
-    <!-- Input for comp_table_id start -->
     <input type="text" id="comp_table_id" name="comp_table_id" class="form-control" value="<%= @insurance_plan.comp_table_id %>">
-    <!-- Input for comp_table_id end -->
   </div>
-  <!-- Label and input for comp_table_id end -->
 
-  <!-- Label and input for age_group start -->
   <div class="form-group">
     <label for="age_group">
       Age group
     </label>
 
-    <!-- Input for age_group start -->
     <input type="text" id="age_group" name="age_group" class="form-control" value="<%= @insurance_plan.age_group %>">
-    <!-- Input for age_group end -->
   </div>
-  <!-- Label and input for age_group end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update insurance plan

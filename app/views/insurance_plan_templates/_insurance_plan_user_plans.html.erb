@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @insurance_plan.user_plans.each do |interested_plan| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/interested_plans/<%= interested_plan.id %>">
           <%= interested_plan.insurance_plan_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_interested_plan_from_insurance_plan/<%= interested_plan.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="insurance_plan_user_plans_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "insurance_plan_templates/insurance_plan_user_plans_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 
