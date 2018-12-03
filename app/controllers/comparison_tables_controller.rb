@@ -59,7 +59,7 @@ class ComparisonTablesController < ApplicationController
     @comparison_table = ComparisonTable.find(params.fetch("id_to_modify"))
 
     @comparison_table.estimated_spend = params.fetch("estimated_spend")
-    @comparison_table.user_id = params.fetch("user_id")
+    
     @comparison_table.insurance_plan_id = params.fetch("insurance_plan_id")
 
     if @comparison_table.valid?
