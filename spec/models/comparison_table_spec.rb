@@ -4,6 +4,8 @@ RSpec.describe ComparisonTable, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:insurance_plan) }
+
     it { should belong_to(:user) }
 
     end
