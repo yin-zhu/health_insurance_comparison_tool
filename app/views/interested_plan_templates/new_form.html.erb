@@ -1,0 +1,45 @@
+<h1>
+  Add a new interested plan
+</h1>
+
+
+<hr>
+
+<!-- Form interested_plan start -->
+<form action="/create_interested_plan" method="post">
+<!-- Form interested_plan end -->
+
+  <!-- Label and input for insurance_plan_id start -->
+  <div class="form-group">
+    <label for="insurance_plan_id">
+      Insurance plan
+    </label>
+
+    <!-- Input for insurance_plan_id start -->
+    <input type="text" id="insurance_plan_id" name="insurance_plan_id" class="form-control">
+    <!-- Input for insurance_plan_id end -->
+  </div>
+  <!-- Label and input for insurance_plan_id end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create interested plan
+  </button>
+</form>
+
+<hr>
+
+<a href="/interested_plans">
+  Go back
+</a>

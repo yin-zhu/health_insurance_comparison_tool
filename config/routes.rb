@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Interested plan resource:
+
+  # CREATE
+  get("/interested_plans/new", { :controller => "interested_plans", :action => "new_form" })
+  post("/create_interested_plan", { :controller => "interested_plans", :action => "create_row" })
+
+  # READ
+  get("/interested_plans", { :controller => "interested_plans", :action => "index" })
+  get("/interested_plans/:id_to_display", { :controller => "interested_plans", :action => "show" })
+
+  # UPDATE
+  get("/interested_plans/:prefill_with_id/edit", { :controller => "interested_plans", :action => "edit_form" })
+  post("/update_interested_plan/:id_to_modify", { :controller => "interested_plans", :action => "update_row" })
+
+  # DELETE
+  get("/delete_interested_plan/:id_to_remove", { :controller => "interested_plans", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Comparison table resource:
 
   # CREATE
