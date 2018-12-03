@@ -10,7 +10,7 @@ class ComparisonTablesController < ApplicationController
   end
 
   def index
-    @comparison_tables = ComparisonTable.all
+    @comparison_tables = current_user.comparison_tables.page(params[:page]).per(10)
 
     render("comparison_table_templates/index.html.erb")
   end
