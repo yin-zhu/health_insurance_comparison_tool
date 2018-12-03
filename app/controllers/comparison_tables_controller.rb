@@ -55,6 +55,22 @@ class ComparisonTablesController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @comparison_table = ComparisonTable.find(params.fetch("id_to_remove"))
+
+    @comparison_table.destroy
+
+    redirect_to("/users/#{@comparison_table.user_id}", notice: "ComparisonTable deleted successfully.")
+  end
+
+  def destroy_row_from_insurance_plan
+    @comparison_table = ComparisonTable.find(params.fetch("id_to_remove"))
+
+    @comparison_table.destroy
+
+    redirect_to("/insurance_plans/#{@comparison_table.insurance_plan_id}", notice: "ComparisonTable deleted successfully.")
+  end
+
   def destroy_row
     @comparison_table = ComparisonTable.find(params.fetch("id_to_remove"))
 

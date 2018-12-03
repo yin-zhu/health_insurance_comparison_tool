@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_interested_plan/:id_to_remove", { :controller => "interested_plans", :action => "destroy_row" })
+  get("/delete_interested_plan_from_insurance_plan/:id_to_remove", { :controller => "interested_plans", :action => "destroy_row_from_insurance_plan" })
+  get("/delete_interested_plan_from_user/:id_to_remove", { :controller => "interested_plans", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -37,6 +39,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_comparison_table/:id_to_remove", { :controller => "comparison_tables", :action => "destroy_row" })
+  get("/delete_comparison_table_from_insurance_plan/:id_to_remove", { :controller => "comparison_tables", :action => "destroy_row_from_insurance_plan" })
+  get("/delete_comparison_table_from_user/:id_to_remove", { :controller => "comparison_tables", :action => "destroy_row_from_user" })
 
   #------------------------------
 

@@ -53,6 +53,22 @@ class InterestedPlansController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @interested_plan = InterestedPlan.find(params.fetch("id_to_remove"))
+
+    @interested_plan.destroy
+
+    redirect_to("/users/#{@interested_plan.user_id}", notice: "InterestedPlan deleted successfully.")
+  end
+
+  def destroy_row_from_insurance_plan
+    @interested_plan = InterestedPlan.find(params.fetch("id_to_remove"))
+
+    @interested_plan.destroy
+
+    redirect_to("/insurance_plans/#{@interested_plan.insurance_plan_id}", notice: "InterestedPlan deleted successfully.")
+  end
+
   def destroy_row
     @interested_plan = InterestedPlan.find(params.fetch("id_to_remove"))
 

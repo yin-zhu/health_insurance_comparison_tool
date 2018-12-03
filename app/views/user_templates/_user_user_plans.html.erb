@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    User Plans
+
+    <a data-toggle="collapse" href="#user_user_plans_new_form">
+      Add interested plan
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.user_plans.each do |interested_plan| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/interested_plans/<%= interested_plan.id %>">
+          <%= interested_plan.insurance_plan_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

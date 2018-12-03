@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Comparison Tables
+
+    <a data-toggle="collapse" href="#user_comparison_tables_new_form">
+      Add comparison table
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.comparison_tables.each do |comparison_table| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/comparison_tables/<%= comparison_table.id %>">
+          <%= comparison_table.created_at %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>
