@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :comparison_tables,
+             :dependent => :destroy
+
   has_many   :user_plans,
              :class_name => "InterestedPlan",
              :dependent => :destroy
