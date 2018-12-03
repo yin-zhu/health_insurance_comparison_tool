@@ -10,6 +10,10 @@ class InsurancePlan < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :users,
+             :through => :comparison_tables,
+             :source => :user
+
   # Validations
 
 end
