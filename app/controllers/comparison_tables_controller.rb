@@ -33,6 +33,22 @@ class ComparisonTablesController < ApplicationController
     end
   end
 
+  def create_row_from_insurance_plan
+    @comparison_table = ComparisonTable.new
+
+    @comparison_table.estimated_spend = params.fetch("estimated_spend")
+    @comparison_table.user_id = params.fetch("user_id")
+    @comparison_table.insurance_plan_id = params.fetch("insurance_plan_id")
+
+    if @comparison_table.valid?
+      @comparison_table.save
+
+      redirect_to("/insurance_plans/#{@comparison_table.insurance_plan_id}", notice: "ComparisonTable created successfully.")
+    else
+      render("comparison_table_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @comparison_table = ComparisonTable.find(params.fetch("prefill_with_id"))
 

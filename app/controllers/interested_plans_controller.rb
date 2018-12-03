@@ -32,6 +32,21 @@ class InterestedPlansController < ApplicationController
     end
   end
 
+  def create_row_from_insurance_plan
+    @interested_plan = InterestedPlan.new
+
+    @interested_plan.insurance_plan_id = params.fetch("insurance_plan_id")
+    @interested_plan.user_id = params.fetch("user_id")
+
+    if @interested_plan.valid?
+      @interested_plan.save
+
+      redirect_to("/insurance_plans/#{@interested_plan.insurance_plan_id}", notice: "InterestedPlan created successfully.")
+    else
+      render("interested_plan_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @interested_plan = InterestedPlan.find(params.fetch("prefill_with_id"))
 

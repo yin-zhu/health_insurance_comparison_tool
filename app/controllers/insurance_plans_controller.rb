@@ -6,6 +6,8 @@ class InsurancePlansController < ApplicationController
   end
 
   def show
+    @comparison_table = ComparisonTable.new
+    @interested_plan = InterestedPlan.new
     @insurance_plan = InsurancePlan.find(params.fetch("id_to_display"))
 
     render("insurance_plan_templates/show.html.erb")

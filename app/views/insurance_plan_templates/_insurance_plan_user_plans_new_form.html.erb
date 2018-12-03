@@ -1,0 +1,25 @@
+<!-- Form interested_plan start -->
+<form action="/create_interested_plan_from_insurance_plan" method="post">
+<!-- Form interested_plan end -->
+
+  <!-- Label and input for insurance_plan_id start -->
+  <!-- Input for insurance_plan_id start -->
+  <input type="hidden" name="insurance_plan_id" value="<%= @insurance_plan.id %>">
+  <!-- Input for insurance_plan_id end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @interested_plan.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create interested plan
+  </button>
+</form>

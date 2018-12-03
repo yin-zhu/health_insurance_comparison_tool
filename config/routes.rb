@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/interested_plans/new", { :controller => "interested_plans", :action => "new_form" })
   post("/create_interested_plan", { :controller => "interested_plans", :action => "create_row" })
+  post("/create_interested_plan_from_insurance_plan", { :controller => "interested_plans", :action => "create_row_from_insurance_plan" })
 
   # READ
   get("/interested_plans", { :controller => "interested_plans", :action => "index" })
@@ -28,6 +29,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/comparison_tables/new", { :controller => "comparison_tables", :action => "new_form" })
   post("/create_comparison_table", { :controller => "comparison_tables", :action => "create_row" })
+  post("/create_comparison_table_from_insurance_plan", { :controller => "comparison_tables", :action => "create_row_from_insurance_plan" })
 
   # READ
   get("/comparison_tables", { :controller => "comparison_tables", :action => "index" })
