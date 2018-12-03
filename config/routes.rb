@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "insurance_plans#index"
   # Routes for the Interested plan resource:
 
   # CREATE
