@@ -10,7 +10,8 @@ class ComparisonTablesController < ApplicationController
   end
 
   def index
-    @comparison_tables = current_user.comparison_tables.page(params[:page]).per(10)
+    @q = current_user.comparison_tables.ransack(params[:q])
+    @comparison_tables = @q.result(:distinct => true).includes(:user, :insurance_plan).page(params[:page]).per(10)
 
     render("comparison_table_templates/index.html.erb")
   end

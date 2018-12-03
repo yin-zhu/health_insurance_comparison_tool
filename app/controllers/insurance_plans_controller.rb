@@ -1,6 +1,7 @@
 class InsurancePlansController < ApplicationController
   def index
-    @insurance_plans = InsurancePlan.page(params[:page]).per(10)
+    @q = InsurancePlan.ransack(params[:q])
+    @insurance_plans = @q.result(:distinct => true).includes(:user_plans, :comparison_tables, :users, :applicants).page(params[:page]).per(10)
 
     render("insurance_plan_templates/index.html.erb")
   end

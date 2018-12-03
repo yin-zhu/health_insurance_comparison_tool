@@ -1,6 +1,7 @@
 class InterestedPlansController < ApplicationController
   def index
-    @interested_plans = InterestedPlan.page(params[:page]).per(10)
+    @q = InterestedPlan.ransack(params[:q])
+    @interested_plans = @q.result(:distinct => true).includes(:user, :insurance_plan).page(params[:page]).per(10)
 
     render("interested_plan_templates/index.html.erb")
   end
