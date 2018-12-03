@@ -1,6 +1,6 @@
 class InterestedPlansController < ApplicationController
   def index
-    @interested_plans = InterestedPlan.all
+    @interested_plans = InterestedPlan.page(params[:page]).per(10)
 
     render("interested_plan_templates/index.html.erb")
   end

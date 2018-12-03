@@ -1,6 +1,6 @@
 class InsurancePlansController < ApplicationController
   def index
-    @insurance_plans = InsurancePlan.all
+    @insurance_plans = InsurancePlan.page(params[:page]).per(10)
 
     render("insurance_plan_templates/index.html.erb")
   end
