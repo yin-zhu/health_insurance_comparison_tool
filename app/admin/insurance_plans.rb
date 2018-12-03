@@ -1,4 +1,6 @@
 ActiveAdmin.register InsurancePlan do
+
+ permit_params :coinsurance_paid_by_patient, :deductible, :monthly_premium, :plan_name, :comp_table_id, :age_group
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
