@@ -27,7 +27,7 @@
     </label>
 
     <!-- Input for insurance_plan_id start -->
-    <input type="text" id="insurance_plan_id" name="insurance_plan_id" class="form-control" value="<%= @interested_plan.insurance_plan_id %>">
+    <%= select_tag(:insurance_plan_id, options_from_collection_for_select(InsurancePlan.all, :id, :coinsurance_paid_by_patient, @interested_plan.insurance_plan_id), :class => "form-control") %>
     <!-- Input for insurance_plan_id end -->
   </div>
   <!-- Label and input for insurance_plan_id end -->
