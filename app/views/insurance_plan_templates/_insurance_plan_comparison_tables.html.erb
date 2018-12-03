@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_comparison_table_from_insurance_plan/<%= comparison_table.id %>">
-          Delete
-        </a>
+        <%if current_user == comparison_table.user %>
+          <a href="/delete_comparison_table_from_insurance_plan/<%= comparison_table.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>

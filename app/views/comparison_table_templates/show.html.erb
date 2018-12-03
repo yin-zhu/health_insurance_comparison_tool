@@ -13,17 +13,21 @@
 
       <!-- Edit link comparison_table start -->
       <div class="col">
-        <a href="/comparison_tables/<%= @comparison_table.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit comparison table
-        </a>
+        <% if current_user == @comparison_table.user %>
+          <a href="/comparison_tables/<%= @comparison_table.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit comparison_table
+          </a>
+        <% end %>
       </div>
       <!-- Edit link comparison_table end -->
 
       <!-- Delete link comparison_table start -->
       <div class="col">
-        <a href="/delete_comparison_table/<%= @comparison_table.id %>" class="btn btn-block btn-outline-secondary">
-          Delete comparison table
-        </a>
+        <% if current_user == @comparison_table.user %>
+          <a href="/delete_comparison_table/<%= @comparison_table.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete comparison_table
+          </a>
+        <% end %>
       </div>
       <!-- Delete link comparison_table end -->
     </div>
