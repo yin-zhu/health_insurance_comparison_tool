@@ -5,8 +5,8 @@ class CreateInsurancePlans < ActiveRecord::Migration[5.1]
       t.float :deductible
       t.float :monthly_premium
       t.string :plan_name
-      t.integer :comp_table_id
       t.integer :age_group
+      t.boolean :smoker_status
 
       t.timestamps
     end
