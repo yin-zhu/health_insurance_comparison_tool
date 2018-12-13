@@ -1,13 +1,12 @@
 class InsurancePlansController < ApplicationController
   def index
     @q = InsurancePlan.ransack(params[:q])
-    @insurance_plans = @q.result(:distinct => true).includes(:user_plans, :comparison_tables, :users, :applicants).page(params[:page]).per(10)
+    @insurance_plans = @q.result(:distinct => true).includes(:user_plans, :applicants).page(params[:page]).per(10)
 
     render("insurance_plan_templates/index.html.erb")
   end
 
   def show
-    @comparison_table = ComparisonTable.new
     @interested_plan = InterestedPlan.new
     @insurance_plan = InsurancePlan.find(params.fetch("id_to_display"))
 
@@ -27,8 +26,8 @@ class InsurancePlansController < ApplicationController
     @insurance_plan.deductible = params.fetch("deductible")
     @insurance_plan.monthly_premium = params.fetch("monthly_premium")
     @insurance_plan.plan_name = params.fetch("plan_name")
-    @insurance_plan.comp_table_id = params.fetch("comp_table_id")
     @insurance_plan.age_group = params.fetch("age_group")
+    @insurance_plan.smoker_status = params.fetch("smoker_status")
 
     if @insurance_plan.valid?
       @insurance_plan.save
@@ -52,8 +51,8 @@ class InsurancePlansController < ApplicationController
     @insurance_plan.deductible = params.fetch("deductible")
     @insurance_plan.monthly_premium = params.fetch("monthly_premium")
     @insurance_plan.plan_name = params.fetch("plan_name")
-    @insurance_plan.comp_table_id = params.fetch("comp_table_id")
     @insurance_plan.age_group = params.fetch("age_group")
+    @insurance_plan.smoker_status = params.fetch("smoker_status")
 
     if @insurance_plan.valid?
       @insurance_plan.save

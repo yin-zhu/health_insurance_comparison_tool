@@ -38,6 +38,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.date :birthday
       t.string :state
       t.boolean :tobacco_use
+      t.integer :estimated_cost
 
       t.timestamps null: false
     end

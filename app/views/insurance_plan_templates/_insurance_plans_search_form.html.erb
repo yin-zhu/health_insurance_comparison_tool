@@ -14,6 +14,21 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :smoker_status_eq, "Smoker status" %>
+    <div>
+      <label class="radio-inline">
+        <%= f.radio_button :smoker_status_eq, "1", checked: ((params[:q] && params[:q][:smoker_status_eq]) == "1" ? "checked" : "") %> Yes
+      </label>
+      <label class="radio-inline">
+        <%= f.radio_button :smoker_status_eq, "0", checked: ((params[:q] && params[:q][:smoker_status_eq]) == "0" ? "checked" : "")%> No
+      </label>
+      <label class="radio-inline">
+        <%= f.radio_button :smoker_status_eq, ""%> Either
+      </label>
+    </div>
+  </div>
+
+  <div class="form-group">
     <%= f.label :age_group, "Age group" %>
     <div class="row">
       <div class='col-md-6 mb-1'>
@@ -21,18 +36,6 @@
       </div>
       <div class='col-md-6'>
         <%= f.text_field :age_group_lteq, :class => "form-control", :placeholder => "Age group less than or equal to" %>
-      </div>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :comp_table_id, "Comp table" %>
-    <div class="row">
-      <div class='col-md-6 mb-1'>
-        <%= f.text_field :comp_table_id_gteq, :class => "form-control", :placeholder => "Comp table greater than or equal to" %>
-      </div>
-      <div class='col-md-6'>
-        <%= f.text_field :comp_table_id_lteq, :class => "form-control", :placeholder => "Comp table less than or equal to" %>
       </div>
     </div>
   </div>
@@ -106,51 +109,6 @@
       });
   </script>
 
-
-  <div class="form-group">
-    <%= f.label :created_at, "ComparisonTable Created at" %>
-    <div class="row">
-      <div class='col-md-6 mb-1'>
-        <div class='input-group date' id='comparison_tablesgteqcreated_atPicker' data-target-input="nearest">
-          <%= f.text_field :comparison_tables_created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "ComparisonTable Created at greater than or equal to", :data => {:target => '#comparison_tablesgteqcreated_atPicker'} %>
-          <div class="input-group-append" data-target='#comparison_tablesgteqcreated_atPicker' data-toggle="datetimepicker">
-            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-          </div>
-        </div>
-      </div>
-
-      <div class='col-md-6'>
-        <div class='input-group date' id='comparison_tableslteqcreated_atPicker' data-target-input="nearest">
-          <%= f.text_field :comparison_tables_created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "ComparisonTable Created at less than or equal to", :data => {:target => '#comparison_tableslteqcreated_atPicker'} %>
-          <div class="input-group-append" data-target='#comparison_tableslteqcreated_atPicker' data-toggle="datetimepicker">
-            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script type="text/javascript">
-      $(function () {
-          $('#comparison_tablesgteqcreated_atPicker').datetimepicker({
-              format: 'YYYY-MM-DD hh:mm:SS'
-          });
-          $('#comparison_tableslteqcreated_atPicker').datetimepicker({
-              useCurrent: false,
-              format: 'YYYY-MM-DD hh:mm:SS'
-          });
-          $('#comparison_tablesgteqcreated_atPicker').on("dp.change", function (e) {
-              $('#comparison_tableslteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
-          });
-          $('#comparison_tableslteqcreated_atPicker').on("dp.change", function (e) {
-              $('#comparison_tablesgteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
-          });
-      });
-  </script>
-
-  <div class="form-group">
-    <%= f.label :users_email_cont, "User email contains" %>
-    <%= f.text_field :users_email_cont, :class => "form-control", :placeholder => "User email contains" %>
-  </div>
 
   <div class="form-group">
     <%= f.label :applicants_email_cont, "User email contains" %>

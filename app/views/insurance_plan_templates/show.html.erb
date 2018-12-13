@@ -54,17 +54,17 @@
       </dd>
 
       <dt>
-        Comp table
-      </dt>
-      <dd>
-        <%= @insurance_plan.comp_table_id %>
-      </dd>
-
-      <dt>
         Age group
       </dt>
       <dd>
         <%= @insurance_plan.age_group %>
+      </dd>
+
+      <dt>
+        Smoker status
+      </dt>
+      <dd>
+        <%= @insurance_plan.smoker_status %>
       </dd>
 
       <dt>
@@ -87,18 +87,6 @@
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "insurance_plan_templates/insurance_plan_user_plans" %>
-  </div>
-</div>
-
-<div class="row mb-3">
-  <div class="col-md-8 offset-md-2">
-    <%= render partial: "insurance_plan_templates/insurance_plan_comparison_tables" %>
-  </div>
-</div>
-
-<div class="row mb-3">
-  <div class="col-md-8 offset-md-2">
-    <%= render partial: "insurance_plan_templates/insurance_plan_users" %>
   </div>
 </div>
 
